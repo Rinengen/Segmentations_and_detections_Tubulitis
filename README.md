@@ -33,7 +33,7 @@ Banff-классификация — это международная конс�
 [YOLOv8_binary_segmentation](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Binary_segmentation_Tubulitis/Detection_Tubulitis_YoloV8_ipynb_.ipynb)
 
 ### Третья попытка - пробуем сегментировать все канальцы без дифференцировки на тубулит и нормальные.
-![Image alt] (https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182640.png)
+![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182640.png)
 
 [All_tubuli_segmentation](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/All_tubules_segmentation/PyTorch_Ligh_Multi.ipynb)
 
