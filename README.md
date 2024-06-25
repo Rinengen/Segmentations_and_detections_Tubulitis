@@ -20,8 +20,8 @@ Banff-классификация — это международная конс�
 (https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Binary_segmentation_Tubulitis/Segmentation_Tubulitis_SMP_UnetPlus_ipynb_.ipynb)
 
 Вторая попыта была произведена на архитектуре YOLOv8
-![Image alt]
-(https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182618.png)
+![Image alt (https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182618.png)
+
 (https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Binary_segmentation_Tubulitis/Detection_Tubulitis_YoloV8_ipynb_.ipynb)
 
 
