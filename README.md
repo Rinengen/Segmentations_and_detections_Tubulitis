@@ -35,8 +35,7 @@ Banff-классификация — это международная конс�
 ### Четвертая попытка - поиск альтернатив - задействование трансформеров с учетом их обобщающих алгоритмов
 ![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182704.png)
 
-![Image alt]
-(https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182726.png)
+![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182726.png)
 
 При некотором обучении удалось добиться метрик близких к необходимым, на валидационной выборке Recall&Precision 0.663/0.581 соответсвенно.
 
