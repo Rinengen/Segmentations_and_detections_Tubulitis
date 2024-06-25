@@ -17,25 +17,30 @@ Banff-классификация — это международная конс�
 ![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182453.png)
 
 Мы экспортировали размеченные данные в виде плиток 512 х 512 px и соответсвующих им бинарные/мультиклассовые маски. С учетом небольшого количества данных производиталь аугментация данных с помощью библиотеки Albumentation 
+
 [Аугментация данных](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Augmentation/Augmen_Tubulitis.ipynb)
+
 ### Первая попытка бинарной сегментации тубулита была произведена на архитектуре U-Net&ResNet101 
 ![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182540.png)
-(https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Binary_segmentation_Tubulitis/Segmentation_Tubulitis_SMP_UnetPlus_ipynb_.ipynb)
+
+[U-Net_binary_segmentation](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Binary_segmentation_Tubulitis/Segmentation_Tubulitis_SMP_UnetPlus_ipynb_.ipynb)
 
 ### Вторая попыта была произведена на архитектуре YOLOv8
 ![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182618.png)
 
-(https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Binary_segmentation_Tubulitis/Detection_Tubulitis_YoloV8_ipynb_.ipynb)
+[YOLOv8_binary_segmentation](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Binary_segmentation_Tubulitis/Detection_Tubulitis_YoloV8_ipynb_.ipynb)
 
 ### Третья попытка - пробуем сегментировать все канальцы без дифференцировки на тубулит и нормальные.
 ![Image alt] (https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182640.png)
 
-Ноутбук - (https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/All_tubules_segmentation/PyTorch_Ligh_Multi.ipynb)
+[All_tubuli_segmentation](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/All_tubules_segmentation/PyTorch_Ligh_Multi.ipynb)
 
 ### Четвертая попытка - поиск альтернатив - задействование трансформеров с учетом их обобщающих алгоритмов
 ![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182704.png)
 
 ![Image alt](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Visualisation/Snapshot_240624182726.png)
+
+[SegFormer_segmentation](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/SegFormer_binary_segmentation/segfrom.ipynb)
 
 При некотором обучении удалось добиться метрик близких к необходимым, на валидационной выборке Recall&Precision 0.663/0.581 соответсвенно.
 
@@ -56,7 +61,8 @@ Banff-классификация — это международная конс�
 ### Оценка межэкспертной согласованности
 Каскад моделей оценен на валидационном наборе данных с заключениями патолога по стадиям тубулита.
 Каждый из скан-изображений разбивался на плитки размерами 256х256px, которые в дальнейшем анализировались нашим каскадом моделей и специально разработанным алгоритмом. В основе алгоритма задавался следующий сценарий:  поиск количества пересечений  в сегментированном канальце с детектированными мононуклеарными клетками, тем самым создавая лист с количеством клеток в каждом найденном канальце с пересечении; оставляем самое большое количество пересечений на плитке;  используем условие присвоения стадии тубулита, согласно классификация Банффа патологии почечного трансплантата [2]; в итоге  плитке  присваивается стадия тубулита; во время работы алгоритма создается список стадий тубулита из всех плиток WSI и  заключение по скан-изображению выносится путем усреднения предсказаний. 
-(https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Essemble/YOLO_Essemble.ipynb)
+
+[Пример работы каскада](https://github.com/Rinengen/Segmentations_and_detections_Tubulitis/blob/main/Essemble/YOLO_Essemble.ipynb)
 
 В итоге мы получаем список предсказаний модели и оценок патолога по стадии тубулита для скан-изображения. Полученный список использовался для измерения уровня согласия между моделью и патологом с помощью коэффициента Каппа Коэна, который составил 0.62 (сильная, но не применимая для медицинских заключений).
 
